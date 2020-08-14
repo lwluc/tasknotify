@@ -2,6 +2,10 @@ import * as vscode from 'vscode';
 import { LocalStorageService } from './LocalStorageService';
 import { formatDuration } from './utils';
 
+// TODO: Icon in notification text?
+// TODO: TODO: Add progress bar for expected/calculated next duration
+// TODO: Add option to set real desktop notification
+
 export function activate(context: vscode.ExtensionContext) {
   let durationObj: Duration = {} as Duration;
   const storageManager = new LocalStorageService(context.workspaceState);
