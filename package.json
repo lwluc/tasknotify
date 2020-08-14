@@ -3,13 +3,13 @@
 	"displayName": "TaskNotify",
 	"description": "Get notifications when you vscode task is done",
 	"version": "0.0.1",
-	"publisher": "Luc Weinbrecht",
+	"publisher": "lwluc",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
-	"icon": "assests/logo/tasknotify-icon.png",
+	"icon": "assets/logo/tasknotify-icon.png",
 	"galleryBanner": {
-		"color": "#C80000",
+		"color": "#AFC0A5",
 		"theme": "dark"
 	},
 	"categories": [

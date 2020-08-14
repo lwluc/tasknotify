@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { LocalStorageService } from './LocalStorageService';
-import { formatDuration } from './untils';
+import { formatDuration } from './utils';
 
 export function activate(context: vscode.ExtensionContext) {
   let durationObj: Duration = {} as Duration;
