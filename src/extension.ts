@@ -22,20 +22,15 @@ export function activate(context: vscode.ExtensionContext) {
       (progress, token) => {
         const stepSize = Math.trunc(durationObj.calcNextDuration / 10);
 
-        // TODO: Fix last step too long
-        Array(10)
-          .fill(0)
-          .forEach((e, i) => {
-            setTimeout(() => {
-              progress.report({ increment: 10 * (i + 1), message: msg });
-            }, stepSize * (i + 1));
-          });
-
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, durationObj.calcNextDuration);
-        });
+        return Promise.all(
+          Array(9)
+            .fill(0)
+            .map((e, i) => {
+              return new Promise(resolve => setTimeout(() => {
+                progress.report({ increment: 10 * (i + 1) });
+                resolve();
+              }, stepSize * (i + 1)));
+            }));
       }
     );
   };
@@ -59,7 +54,6 @@ export function activate(context: vscode.ExtensionContext) {
     durationObj.endTime = new Date();
     durationObj.currentDuration =
       durationObj.endTime.valueOf() - durationObj.startTime.valueOf();
-
     if (!durationObj.lastDuration) {
       durationObj.lastDuration = durationObj.currentDuration;
     }
@@ -75,4 +69,4 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(taskStarted, taskEnden);
 }
 
-export function deactivate() {}
+export function deactivate() { }

@@ -9,3 +9,5 @@ Get notifications when your vscode task is finished.
 Notifies you when your vscdeo task is done.
 
 Calculate based on the history run's in your workspace the expected duration of the next run.
+
+![Screenrecording](/assets/animation.gif "Screenrecording")

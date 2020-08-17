@@ -2,7 +2,7 @@
 	"name": "tasknotify",
 	"displayName": "TaskNotify",
 	"description": "Get notifications when you vscode task is done",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "lwluc",
 	"engines": {
 		"vscode": "^1.47.0"
